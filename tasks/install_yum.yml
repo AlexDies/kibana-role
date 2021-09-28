@@ -1,5 +1,5 @@
 ---
-- name: Install kibana
+- name: Install kibana yum
   become: true
   yum:
     name: "/tmp/kibana-{{ kibana_version }}-x86_64.rpm"

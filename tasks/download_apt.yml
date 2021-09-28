@@ -1,5 +1,5 @@
 ---
-- name: "Download Kibana rpm"
+- name: "Download Kibana deb"
   get_url:
     url: "https://artifacts.elastic.co/downloads/kibana/kibana-{{ kibana_version }}-amd64.deb"
     dest: "files/kibana-{{ kibana_version }}-amd64.deb"

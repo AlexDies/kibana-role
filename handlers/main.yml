@@ -1,8 +1,8 @@
 ---
 - name: restart kibana
-  become: true
+#  become: true
   systemd:
     name: kibana
     state: restarted
     enabled: true
-  when: ansible_virtualization_type != 'docker'
+#  when: ansible_virtualization_type != 'docker'

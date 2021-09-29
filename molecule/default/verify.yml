@@ -8,3 +8,29 @@
   - name: Example assertion
     assert:
       that: true
+
+  - name: Kibana install status
+    package:
+      name: kibana
+      state: "present"
+    check_mode: true
+    register: pkg_status
+  - name: Kibana installed
+    assert:
+      that:
+        - not pkg_status.changed
+      fail_msg: "Kibana is not install"
+      success_msg: "Kibana is install!"
+
+  - name: Gathering facts
+    service_facts:
+  - name: See service kibana
+    debug:
+      msg: "{{ ansible_facts.services['kibana.service'].state }}"
+  - name: Verify kibana is running
+    assert:
+      that:
+        - "'{{ ansible_facts.services['kibana.service'].state }}' == 'running'"
+      fail_msg: "Kibana not running"
+      success_msg: "Kibana is running!"
+

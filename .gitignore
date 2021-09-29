@@ -3,3 +3,7 @@ files/*
 meta/.galaxy_install_info
 /roles/elastic/*
 /playbook/*
+/kibana/*
+/filebeat/*
+/elastic/*
+/molecule/default/files/*

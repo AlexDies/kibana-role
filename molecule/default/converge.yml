@@ -4,4 +4,4 @@
   tasks:
     - name: "Include kibana"
       include_role:
-        name: "kibana"
+        name: "kibana-role"

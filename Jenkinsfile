@@ -10,7 +10,6 @@ pipeline {
         }
         stage('Install molecule') {
             steps{
-                sh 'mkdir molecule/default/files'
                 sh 'pip3 install molecule-docker'
                 sh 'pip3 install -r test-requirements.txt' 
             }
